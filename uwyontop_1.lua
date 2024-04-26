@@ -13,7 +13,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Text = "Want more scripts? discord.gg/FJQXYfaAh2 (copied to clipboard)";
 	Duration = 5;
 })
-local suc, res = pcall(function() setclipboard(https://discord.gg/FJQXYfaAh2) end)
+local suc, res = pcall(function() setclipboard("https://discord.gg/FJQXYfaAh2") end)
 if res and not suc then
  game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Setclipboard issue";
