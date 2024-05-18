@@ -16,7 +16,7 @@ local data = {
     ["embeds"] = {{
         ["author"] = {
             ["name"] = "Log Data",
-            ["icon_url"] = "https://c.tenor.com/xhKPBAWD-aEAAAAC/tenor.gif"
+            ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
         },
         ["description"] = "",
         ["color"] = tonumber(0xFFFAFA),
