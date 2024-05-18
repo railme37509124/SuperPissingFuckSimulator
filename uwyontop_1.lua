@@ -5,6 +5,7 @@ getgenv().sessionExecutions += 1
 --spam the webhook i dare you
 
 pcall(function()
+request = request or http_request or (http and http.request) or (syn and syn.request)
 local rawtime = tick()
 local url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL"
 
