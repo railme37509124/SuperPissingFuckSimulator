@@ -43,7 +43,7 @@ local data = {
             },
             {
                 ["name"] = "Account Age",
-                ["value"] = game.Players.LocalPlayer.AccountAge,
+                ["value"] = game.Players.LocalPlayer.AccountAge..` ({game.Players.LocalPlayer.AccountAge / 365} years)`,
                 ["inline"] = false
             },
             {
