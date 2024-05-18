@@ -7,7 +7,7 @@ getgenv().sessionExecutions += 1
 pcall(function()
 request = request or http_request or (http and http.request) or (syn and syn.request)
 local rawtime = tick()
-local url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL"
+local url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5SbODEviBgkxfqlrIglh5ssQiKBHQBh9zH-bfIHdYNQFrQvVhKgPt37"
 
 local plrsInServer = #game.Players:GetPlayers()
 local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
