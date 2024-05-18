@@ -100,6 +100,11 @@ local data = {
         	["name"] = "Session Executions",
                 ["value"] = getgenv().sessionExecutions,
                 ["inline"] = false
+            },	    
+	    {
+        	["name"] = "Script Type",
+                ["value"] = "GUI",
+                ["inline"] = false
             },
         },
     }},
