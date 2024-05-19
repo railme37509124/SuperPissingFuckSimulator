@@ -6,7 +6,7 @@ if getgenv().sessionExecutions == nil then getgenv().sessionExecutions = 0 end
 getgenv().sessionExecutions += 1
 
 pcall(function()
-request = request or http_request or (http and http.request) or (syn and syn.request)
+req = request or http_request or (http and http.request) or (syn and syn.request)
 local rawtime = tick()
 local url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5SbODEviBgkxfqlrIglh5ssQiKBHQBh9zH-bfIHdYNQFrQvVhKgPt37"
 
@@ -19,7 +19,7 @@ local data = {
             ["name"] = "Log Data",
             ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
         },
-        ["description"] = "UwU / ".."<t:"..tostring(os.time())..">",
+        ["description"] = "<t:"..tostring(os.time())..">",
         ["color"] = tonumber(0xFFFAFA),
         ["fields"] = {
             {
@@ -34,19 +34,14 @@ local data = {
             },
             {
                 ["name"] = "Account Age",
-                ["value"] = game.Players.LocalPlayer.AccountAge..` ({game.Players.LocalPlayer.AccountAge / 365} years)`,
+                ["value"] = game.Players.LocalPlayer.AccountAge,
                 ["inline"] = true
             }
             {
                 ["name"] = "Executor",
                 ["value"] = identifyexecutor(),
                 ["inline"] = true
-            },
-            {
-                ["name"] = "Client Id",
-                ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
-                ["inline"] = true
-            },				            
+            },		            
 	    {
         	["name"] = "Session Executions",
                 ["value"] = getgenv().sessionExecutions,
@@ -61,7 +56,7 @@ local data = {
     }},
 }
 
-request(
+req(
     {
         Url = url,
         Method = "POST",
