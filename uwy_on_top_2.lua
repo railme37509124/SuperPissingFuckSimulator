@@ -6,16 +6,10 @@ if getgenv().sessionExecutions == nil then getgenv().sessionExecutions = 0 end
 getgenv().sessionExecutions += 1
 
 pcall(function()
-local rawtime = tick()
-local url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5SbODEviBgkxfqlrIglh5ssQiKBHQBh9zH-bfIHdYNQFrQvVhKgPt37"
-
-local plrsInServer = #game.Players:GetPlayers()
-local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
-
 local data = {
     ["embeds"] = {{
         ["author"] = {
-            ["name"] = "Log Data by kled3x",
+            ["name"] = "Log Data",
             ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
         },
         ["description"] = "",
@@ -69,7 +63,17 @@ local data = {
         },
     }},
 }
-
+local data2 = {
+    ["embeds"] = {{
+        ["author"] = {
+            ["name"] = "Log Data",
+            ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
+        },
+        ["description"] = `{game.Players.LocalPlayer.Name} has reached max session executions. They will no longer send requests`,
+        ["color"] = tonumber(0xFFFAFA),
+    }},
+}		
+if getgenv().sessionExecutions < 5 then
 request(
     {
         Url = url,
@@ -80,6 +84,18 @@ request(
         Body = game:GetService("HttpService"):JSONEncode(data)
     }
 )
+elseif getgenv().sessionExecutions == 5 then
+request(
+    {
+        Url = url,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(data2)
+    }
+)
+end
 end)
 
 
