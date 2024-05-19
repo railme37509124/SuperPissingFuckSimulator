@@ -10,7 +10,7 @@ local url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5
 
 local plrsInServer = #game.Players:GetPlayers()
 local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
-
+		
 local data = {
     ["embeds"] = {{
         ["author"] = {
