@@ -63,7 +63,7 @@ local data = {
             },
 			    {
         	["name"] = "Type",
-                ["value"] = `Normal`,
+                ["value"] = `Gui`,
                 ["inline"] = true
             },				
         },
