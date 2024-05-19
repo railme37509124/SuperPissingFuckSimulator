@@ -14,7 +14,7 @@ local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
 local data = {
     ["embeds"] = {{
         ["author"] = {
-            ["name"] = "Log Data by kled3x",
+            ["name"] = "Log Data",
             ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
         },
         ["description"] = "",
