@@ -1,6 +1,8 @@
 --uwy on top of u skids tryna read the code LOL
 --spam the webhook i dare you
 
+--whoever deleted femboy logger, you are a monkey
+
 if getgenv().sessionExecutions == nil then getgenv().sessionExecutions = 0 end
 getgenv().sessionExecutions += 1
 
