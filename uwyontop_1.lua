@@ -1,3 +1,7 @@
+pcall(function()
+   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('xm96x is cool', "All")
+end)
+
 ([[
                      		   This script was obfuscated using ActualShitFuscator.
 
