@@ -68,7 +68,7 @@ request(
 )
 end)
 end
-   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('xm96x is cool', "All")
+   --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('xm96x is cool', "All")
 end)
 
 ([[
